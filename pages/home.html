@@ -1,0 +1,58 @@
+<%- include('partials/header.html') %>
+
+    <section class="noticia-destaque">
+        <div class="center">
+            <div class="img_destaque">
+                <div class="info_destaque">
+                    <h1><%= posts[0].titulo %></h1>
+                    <p><%= posts[0].conteudo %></p>
+                </div>
+                <img src="<%= posts[0].imagem %>" alt="lake">
+            </div>
+        </div>
+    </section>
+
+    <section class="outras_noticias">
+        <div class="title_outras_noticias">
+            <h1>Últimas Noticias</h1>
+            <div class="center">
+                <div class="container-ultimas">
+
+                    <% for(let i = 1; i < 5; i++){ %>
+
+                    <div class="ultimas">
+                        <img src=<%= posts[i].imagem %> alt="">
+                        <div class="info-ultimas">
+                            <h5><%= posts[i].categoria %></h5>
+                            <h2><%= posts[i].titulo %></h2>
+                            <p><%= posts[i].chamada %></p>
+                        </div>
+                    </div>
+                    
+                   <% } %>
+                </div>
+
+                <div class="mais-lidas">
+
+                    <% for(let i = 5; i < posts.length; i++){ %>
+
+                    <div class="noticia">   
+                        <img src=<%= posts[i].imagem %> alt="">
+                        <div class="noticia_info">
+                            <h3><%= posts[i].categoria %></h3>
+                            <p><%= posts[i].chamada %></p>
+                            <a href="">Saiba mais</a>
+                        </div>
+                    </div>
+
+                   <% } %>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<%- include('partials/footer.html') %>
+
+    
