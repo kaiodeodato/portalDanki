@@ -3,46 +3,17 @@
     <section class="noticia-destaque">
         <div class="center">
             <h2>Busca:</h2>
-           
-
                 <div class="noticias_busca">
-                    <h2>33 resultados</h2>
-                    <div class="noticia">   
-                        <img src="/public/image3.jpg" alt="">
-                        <div class="noticia_info">
-                            <h3>Natureza</h3>
-                            <p> type and scrambled it to make a type specimen book. It has survived not only</p>
-                            <a href="">Saiba mais</a>
+                    <% for(let i = 1; i < postsBusca.length; i++){ %>
+                        <div class="noticia">   
+                            <img src=<%= postsBusca[i].imagem %> alt="">
+                            <div class="noticia_info">
+                                <h3><%= postsBusca[i].titulo %></h3>
+                                <p><%= postsBusca[i].chamada %></p>
+                                <a href="/<%= postsBusca[i].slug %>">Saiba mais</a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="noticia">   
-                        <img src="/public/image3.jpg" alt="">
-                        <div class="noticia_info">
-                            <h3>Natureza</h3>
-                            <p> type and scrambled it to make a type specimen book. It has survived not only</p>
-                            <a href="">Saiba mais</a>
-                        </div>
-                    </div>
-
-                    <div class="noticia">   
-                        <img src="/public/image3.jpg" alt="">
-                        <div class="noticia_info">
-                            <h3>Natureza</h3>
-                            <p> type and scrambled it to make a type specimen book. It has survived not only</p>
-                            <a href="">Saiba mais</a>
-                        </div>
-                    </div>
-
-                    <div class="noticia">   
-                        <img src="/public/image3.jpg" alt="">
-                        <div class="noticia_info">
-                            <h3>Natureza</h3>
-                            <p> type and scrambled it to make a type specimen book. It has survived not only</p>
-                            <a href="">Saiba mais</a>
-                        </div>
-                    </div>
-
+                    <% } %>
                 </div>
             </div>
         </div>

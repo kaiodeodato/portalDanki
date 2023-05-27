@@ -7,7 +7,8 @@ var postSchema = new Schema({
     categoria: String,
     conteudo: String,
     slug: String,
-    chamada: String
+    chamada: String,
+    view: Number
 
 },{collection:'news'})
 

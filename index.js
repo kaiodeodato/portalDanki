@@ -5,7 +5,6 @@ const port = process.env.PORT || 5000;
 const path = require('path');
 
 const app = express();
-
 const Posts = require('./Posts.js')
 
 // conecção com o banco de dados
@@ -31,22 +30,55 @@ app.get('/',(req,res)=> {
     if (req.query.busca == null) {
         // requisição do banco de dados
         Posts.find({})
-            .sort({ _id: -1 })
-            .then((posts) => {
-            res.render('home', {posts:posts});
-          })
+        .sort({ _id: -1 })
+        .then((posts) => {
+
+          Posts.find({})
+            .sort({ view: -1 })
+            .limit(4)
+            .then((topPosts) => {
+              res.render('home', { posts: posts, postsTop: topPosts });
+            });
+
+        })
           .catch((err) => {
             console.log(err);
             res.render('home', {});
           });
       } else {
-        res.render('busca', {});
+        // selecionar do banco de dados como palavra busca
+          // renderizar itens de busca
+          Posts.find({titulo: {$regex: req.query.busca, $options: "i"}})
+          .then(postsBusca => {
+            res.render('busca', {postsBusca:postsBusca});
+          })
       }
 })
 
 //slug noticia
 app.get('/:slug',(req,res)=>{
-    res.render('single',{nome:req.params.slug})
+
+    Posts.findOneAndUpdate(
+      {slug: req.params.slug}, 
+      {$inc : { view:1}}, 
+      {new:true})
+    .then((post) => {
+      // in case that the slug is wrong or doesnt exists
+      if(post){
+        Posts.find({})
+          .sort({ view: -1 })
+          .limit(4)
+          .then((topPosts) => {
+            res.render('single', { post: post, postsTop: topPosts });
+        });
+      }else{
+        res.redirect('/');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect('/')
+    });
 })
 
 // servidor

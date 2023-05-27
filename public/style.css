@@ -13,6 +13,10 @@ header a{
    text-decoration: none;
    color: white;
 }
+a{
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
 .nav_center{
     display: flex;
     align-items: center;
@@ -65,6 +69,7 @@ header a{
     max-height: 450px;
     object-fit: cover;
     box-shadow: 0px 5px 7px rgba(34, 34, 34, 0.63);
+    object-position: top;
 }
 .info_destaque{
     position: absolute;
@@ -103,7 +108,7 @@ header a{
 }
 .mais-lidas{
     width: 400px;
-    height: auto;
+    height: 620px;
     border-radius: 10px;
     overflow: hidden;
     margin: 10px;
@@ -173,9 +178,10 @@ footer{
     line-height: 26px;
 }
 
-/* max-width: 1200px;
-margin: auto;
-padding: 0 2%;
-display: flex;
-flex-wrap: wrap;
-justify-content: center; */
+.class-views{
+    color: #999;
+}
+
+.class-image-single{
+    height: 520px;
+}
