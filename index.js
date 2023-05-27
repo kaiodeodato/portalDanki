@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 var bodyParser = require('body-parser');
-
+const port = process.env.PORT || 5000;
 const path = require('path');
 
 const app = express();
@@ -50,7 +50,7 @@ app.get('/:slug',(req,res)=>{
 })
 
 // servidor
-app.listen(5000,()=> {
+app.listen(port,()=> {
     console.log('server is running on port 5000');
 })
 
