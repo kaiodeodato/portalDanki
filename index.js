@@ -10,12 +10,14 @@ const app = express();
 const Posts = require('./Posts.js')
 require('dotenv').config();
 app.use(fileupload());
+const cors = require('cors');
+
 
 // conecção com o banco de dados
 mongoose.connect(process.env.CHAVE,{useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>console.log('conectado com sucesso'))
 .catch((err)=>console.log(err))
-
+app.use(cors());
 // innicializar session
 app.use(session({ secret: 'sebsetbafveb', cookie: {maxAge: 60000}}))
 //ro support JSON-encoded bodies and URL-encoded bodies
