@@ -90,7 +90,7 @@ app.get('/:slug',(req,res)=>{
 var usuarios = [
   {
     login: 'kaio',
-    senha: 'SENHA'
+    senha: process.env.SENHA
   }
 ]
 
