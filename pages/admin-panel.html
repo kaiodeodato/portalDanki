@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/style.css" rel="stylesheet" />
+    <title>Painel do admin</title>
+</head>
+<body>
+    <div class="header-painel">
+        <h2>cadastro Noticia</h2>
+    </div>
+    <form enctype="multipart/form-data" class="noticia-form" method="post" action="/admin/cadastro">
+        <input type="text" name="titulo" placeholder="titulo da noticia">
+        <input type="text" name="categoria" placeholder="categoria" >
+        <input type="text" name="slug" placeholder="slug" >
+        <input type="file" name="arquivo" accept="image/jpeg">
+        <textarea name="text" placeholder="noticia..." ></textarea>
+        <input class="submit" type="submit" name="acao" value="Cadastrar" >
+    </form>
+    <br>
+    <div>
+        <h2>Listando Noticias</h2>
+    </div>
+
+    <% for(let i = 0; i < posts.length; i++){ %>
+    <div class="noticia-single-delete">
+        <p>Titulo Noticia: <%= posts[i].titulo %></p>
+        <a href="/admin/deletar/<%= posts[i].id %>">(X)</a>
+    </div>
+    <% } %>
+
+</body>
+</html>
+

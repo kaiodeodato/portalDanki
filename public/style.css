@@ -185,3 +185,48 @@ footer{
 .class-image-single{
     height: 520px;
 }
+
+.header-painel{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(155, 171, 222);
+    color :white;
+}
+
+.noticia-form{
+    padding: 10px;
+    margin: 20px 0;
+}
+.noticia-form input{
+    width: 100%;
+    height: 40px;
+    border:1px solid #ccc;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.noticia-form textarea{
+    width: 100%;
+    height: 120px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.noticia-form .submit{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(155, 171, 222);
+    border: 0;
+    cursor: pointer;
+}
+.noticia-single-delete{
+    width: 90%;
+    height: 40px;
+    background-color: rgb(183, 193, 227);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+
+}
