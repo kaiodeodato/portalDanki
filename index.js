@@ -154,13 +154,19 @@ app.get('/admin/login',(req,res)=>{
   }
 })
 
-app.get('/api/request',(req,res)=>{
+app.get('/noticias',(req,res)=>{
   Posts.find({})
-    .then((noticias)=>{
-        res.json(noticias)
-    })
+  .then((noticias)=>{
+      res.json(noticias)
+  })
 })
 
+app.get('/noticias/:slug',(req,res)=>{
+  Posts.find({slug:req.params.slug})
+  .then((noticias)=>{
+      res.json(noticias)
+  })
+})
 
 // servidor
 app.listen(port,()=> {
