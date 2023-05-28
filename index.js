@@ -62,7 +62,7 @@ app.get('/',(req,res)=> {
 })
 
 //slug noticia
-app.get('/:slug',(req,res)=>{
+app.get('/slug/:slug',(req,res)=>{
 
     Posts.findOneAndUpdate(
       {slug: req.params.slug}, 

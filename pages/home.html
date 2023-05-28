@@ -7,7 +7,7 @@
                     <h1><%= posts[0].titulo %></h1>
                     <p><%= posts[0].conteudo %></p>
                 </div>
-                <a href="/<%= posts[0].slug %>">
+                <a href="/slug/<%= posts[0].slug %>">
                     <img src="<%= posts[0].imagem %>" alt="lake">
                 </a>
             </div>
@@ -21,7 +21,7 @@
                 <div class="container-ultimas">
 
                     <% for(let i = 1; i < posts.length; i++){ %>
-                        <a href="/<%= posts[i].slug %>">
+                        <a href="/slug/<%= posts[i].slug %>">
                         <div class="ultimas">
                             <img src=<%= posts[i].imagem %> alt="">
                             <div class="info-ultimas">
@@ -37,7 +37,7 @@
                 <div class="mais-lidas">
 
                     <% for(let i = 0; i < postsTop.length; i++){ %>
-                    <a href="/<%= postsTop[i].slug %>">
+                    <a href="/slug/<%= postsTop[i].slug %>">
                         <div class="noticia">   
                             <img src=<%= postsTop[i].imagem %> alt="">
                             <div class="noticia_info">
